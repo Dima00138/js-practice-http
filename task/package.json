@@ -1,0 +1,23 @@
+{
+  "name": "js-http",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "npx ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dima00138/js-practice-http.git"
+  },
+  "author": "Dima00138",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dima00138/js-practice-http/issues"
+  },
+  "homepage": "https://github.com/Dima00138/js-practice-http#readme",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "express": "^4.19.2"
+  }
+}
