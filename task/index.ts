@@ -7,10 +7,23 @@ const app = express();
 
 app.use(express.urlencoded({extended: false}));
 
+//200, 404
 app.get("/weather", async (req, res) => {
     try {
         const city = req.query.city || "Minsk";
         const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`);
+        res.status(response.status).json(response.data);
+    } catch (error : any) {
+        console.error(error);
+        res.status(error.response.status).send(error.response.data.message);
+    }
+});
+
+//401
+app.get("/401", async (req, res) => {
+    try {
+        const city = req.query.city || "Minsk";
+        const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}`);
         res.status(response.status).json(response.data);
     } catch (error : any) {
         console.error(error);
